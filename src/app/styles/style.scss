@@ -1,0 +1,93 @@
+@import 'universals';
+@import 'variables';
+@import 'mixings';
+
+.header{
+    &__nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1{
+            color: $color-primary;
+            font-size: 36px;
+            padding: 10px;
+        }
+    }
+}
+
+.button{
+    @include buttons();
+    &--nav{
+        background-color: $color-primary;
+        color: #fff;
+        height: fit-content;
+        &:hover{
+            border: 1px solid $color-primary;
+            color: $color-primary;
+        }
+    }
+    &--success{
+        background-color: $color-secondary;
+        color: #fff;
+        width: fit-content;
+        align-self: flex-end;
+        padding: 20px;
+        &:hover{
+            border: 1px solid  $color-secondary;
+            color:  $color-secondary;
+        }
+    }
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 10px 10%;
+
+    &__label{
+        font-size: 14px;
+        color: $color-primary;
+        font-weight: 600;
+    }
+
+    &__input, select{
+        padding: 15px;
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid $color-secondary;
+    }
+}
+
+.main__table {
+    margin: 30px auto;
+    background-image: linear-gradient(to right top, #845ec2, #636cc8, #4176c6, #227ec0, #1483b5, #348db6, #4c97b7, #62a1b8, #81b4c8, #9fc7d7, #bddae7, #daeef7);
+    border-radius: 20px;
+    padding: 10px 50px;
+    color: white;
+    tr {
+        
+        td {
+            padding: 30px 20px;
+            span {
+                padding: 0 5px;
+            }
+            .button--delete:hover {
+                color: $color-primary;
+                cursor: pointer;
+            }
+            .button--edit:hover {
+                color: $color-secondary;
+                cursor: pointer;
+            }
+        }
+        th {
+            padding: 30px 20px;
+            border-bottom: 1px dotted white;
+        }
+    }
+}
+
+.inactive {
+    display: none;
+}
